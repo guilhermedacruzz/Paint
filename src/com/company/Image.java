@@ -9,8 +9,8 @@ public class Image {
     public static final int WIDTH = 250;
     public static final int HEIGHT = 250;
 
-    public static final float INCREMENT = 18f;
-    public static final int AMOUNTOFPOINTS = 360 / (int)INCREMENT;
+    public static final float INCREMENT = 3f;
+    public static final int AMOUNTOFPOINTS = 360 / 3;
     public static final int X = (WIDTH / 2) * Game.SCALE;
     public static final int Y = (HEIGHT / 2) * Game.SCALE;
 
@@ -31,7 +31,7 @@ public class Image {
             angle += INCREMENT;
         }
 
-        this.setStart(this.getPoints()[0]);
+        this.setStart(this.getPoints()[70]);
     }
 
     public void renderLine(Graphics2D graphics2D, Line line){
@@ -43,7 +43,16 @@ public class Image {
             }
         }
 
+
         this.setEnd(this.getPoints()[new Random().nextInt(AMOUNTOFPOINTS)]);
+
+        if(line.linesStart.size() > 360) {
+            return;
+        }
+
+        line.linesStart.add(this.getStart());
+        line.linesEnd.add(this.getEnd());
+
         this.setStart(this.getEnd());
 
     }
