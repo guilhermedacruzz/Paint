@@ -6,11 +6,11 @@ import java.util.Random;
 
 public class Image {
 
-    public static final int WIDTH = 250;
-    public static final int HEIGHT = 250;
+    public static final int WIDTH = 225;
+    public static final int HEIGHT = 225;
 
-    public static final float INCREMENT = 3f;
-    public static final int AMOUNTOFPOINTS = 360 / 3;
+    public static final float INCREMENT = 9f;
+    public static final int AMOUNTOFPOINTS = 360 / (int)INCREMENT;
     public static final int X = (WIDTH / 2) * Game.SCALE;
     public static final int Y = (HEIGHT / 2) * Game.SCALE;
 
@@ -22,7 +22,7 @@ public class Image {
     private Point points[];
 
     public Image() {
-        this.setSprite(new SpriteSheet("res/escudo.jpg").getSprite(0, 0, WIDTH, HEIGHT));
+        this.setSprite(new SpriteSheet("res/t2.jpg").getSprite(0, 0, WIDTH, HEIGHT));
         this.setPoints(new Point[AMOUNTOFPOINTS]);
 
         double angle = 0;
@@ -31,7 +31,7 @@ public class Image {
             angle += INCREMENT;
         }
 
-        this.setStart(this.getPoints()[70]);
+        this.setStart(this.getPoints()[0]);
     }
 
     public void renderLine(Graphics2D graphics2D, Line line){
