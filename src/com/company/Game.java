@@ -142,29 +142,17 @@ public class Game extends Canvas implements Runnable{ // Cria a Classe GameLoopi
     }
 
     // METODOS GETTERS E SETTERS
-    public boolean isRunning() {
-        return isRunning;
-    }
+    public boolean isRunning() { return isRunning; }
 
-    public void setRunning(boolean isRunning) {
-        this.isRunning = isRunning;
-    }
+    public void setRunning(boolean isRunning) {this.isRunning = isRunning; }
 
-    public Thread getThread() {
-        return thread;
-    }
+    public Thread getThread() { return thread; }
 
-    public void setThread(Thread thread) {
-        this.thread = thread;
-    }
+    public void setThread(Thread thread) { this.thread = thread; }
 
-    public JFrame getFrame() {
-        return frame;
-    }
+    public JFrame getFrame() {return frame; }
 
-    public void setFrame(JFrame frame) {
-        this.frame = frame;
-    }
+    public void setFrame(JFrame frame) { this.frame = frame; }
 
     public BufferedImage getImage() { return image; }
 
