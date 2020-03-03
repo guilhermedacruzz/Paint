@@ -23,16 +23,17 @@ public class Line {
                 }
             }
         }*/
+
         graphics2D.setColor(Color.WHITE);
         for(int i = 0; i < this.linesStart.size(); i++) {
-            graphics2D.drawLine(Game.WEIGH + (int) this.linesStart.get(i).getX(), (int) this.linesStart.get(i).getY(),Game.WEIGH + (int) this.linesEnd.get(i).getX(), (int) this.linesEnd.get(i).getY());
+            graphics2D.drawLine((int)(Game.WEIGH * 1.5f) + (int) this.linesStart.get(i).getX(), (int) this.linesStart.get(i).getY(),(int)(Game.WEIGH * 1.5f) + (int) this.linesEnd.get(i).getX(), (int) this.linesEnd.get(i).getY());
         }
     }
 
     public void render(Graphics2D graphics2D) {
         for (int i = 0; i < Image.AMOUNTOFPOINTS; i++) {
             graphics2D.setColor(Color.PINK);
-            graphics2D.fillRect(Game.WEIGH + (int) this.getPoints()[i].getX(), (int) this.getPoints()[i].getY(), 5, 5);
+            graphics2D.fillRect((int)(Game.WEIGH * 1.5f) +  (int) this.getPoints()[i].getX(), (int) this.getPoints()[i].getY(), 5, 5);
         }
     }
 

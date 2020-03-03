@@ -24,7 +24,7 @@ public class Game extends Canvas implements Runnable{ // Cria a Classe GameLoopi
     private JFrame frame; // Objeto da Janela
     public static final int WEIGH = Image.WIDTH * 2; // Largura
     public static final int HEIGHT = Image.HEIGHT; // Altura
-    public static final int SCALE = 2;
+    public static final int SCALE = 3;
 
     private BufferedImage image; // BufferedImage para o fundo do jogo
 
@@ -95,7 +95,7 @@ public class Game extends Canvas implements Runnable{ // Cria a Classe GameLoopi
         //g2.drawImage(this.getPaint().getSprite(), Image.WIDTH * SCALE, 0, Image.WIDTH * SCALE, Image.HEIGHT * SCALE, null);
 
         this.getPaint().render(g2);
-        this.getPaint().renderLine(g2, this.getNewPaint());
+        this.getPaint().renderLine(g2, this.getNewPaint(), this);
 
         g2.drawImage(this.getPaint().getSprite(), Image.WIDTH * SCALE, 0, Image.WIDTH * SCALE, Image.HEIGHT * SCALE, null);
         this.getNewPaint().render(g2);
@@ -120,7 +120,7 @@ public class Game extends Canvas implements Runnable{ // Cria a Classe GameLoopi
         int contFPS = 0; // Contador de FPS
         double timer = System.currentTimeMillis(); // Pego a horário do computador em mili segundos
 
-        while(this.isRunning) {
+        while(this.isRunning()) {
             long now = System.nanoTime(); // Pega o horário do computador
             delta += (now - lastTime) / ns; // Subtrai o tempo atual com o tempo do último frame dividindo o resultado com o tempo de um frame
             lastTime = now;
